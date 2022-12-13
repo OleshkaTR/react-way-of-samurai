@@ -1,7 +1,7 @@
 import {connect, Provider} from 'react-redux';
 import {compose} from 'redux';
 import React, {Component} from 'react';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {HashRouter, Route, Routes} from 'react-router-dom';
 import {store} from './redux/reduxStore';
 import News from './components/News/News';
 import Music from './components/Music/Music';
@@ -34,8 +34,10 @@ class App extends Component {
                 <Sidebar/>
                 <main className='app-wrapper__content'>
                     <Routes>
-                        <Route path='/dialogs' element={<React.Suspense fallback={<Preloader/>}><DialogsContainer/></React.Suspense>}/>
-                        <Route path='/profile' element={<React.Suspense fallback={<Preloader/>}><ProfileContainer/></React.Suspense>}/>
+                        <Route path='/dialogs'
+                               element={<React.Suspense fallback={<Preloader/>}><DialogsContainer/></React.Suspense>}/>
+                        <Route path='/profile'
+                               element={<React.Suspense fallback={<Preloader/>}><ProfileContainer/></React.Suspense>}/>
                         <Route path='/profile/:userId' element={<ProfileContainer/>}/>
                         <Route path='/users' element={<UsersContainer/>}/>
                         <Route path='/news' element={<News/>}/>
@@ -57,11 +59,11 @@ const mapStateToProps = (state) => ({
 let AppContainer = compose(connect(mapStateToProps, {initializeApp}))(App);
 
 const MainApp = (props) => {
-    return <BrowserRouter>
+    return <HashRouter>
         <Provider store={store}>
             <AppContainer/>
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 };
 
 export default MainApp;
