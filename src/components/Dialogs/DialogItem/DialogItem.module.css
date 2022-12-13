@@ -1,0 +1,8 @@
+._item {
+    color: white;
+    padding: 10px;
+}
+
+._item__active {
+    color: gold;
+}

@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+}
+
+.app-wrapper__content {
+  background: cornflowerblue;
+  max-width: 1280px;
+}
