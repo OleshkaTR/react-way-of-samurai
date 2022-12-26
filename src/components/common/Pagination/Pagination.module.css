@@ -3,11 +3,13 @@
 }
 
 .pageNumber {
+    cursor: pointer;
     padding: 2px;
     border: 1px solid grey;
 }
 
 .selectPage {
-    border-color: black;
+    cursor: pointer;
+    border: 1px solid black;
     font-weight: bold;
 }

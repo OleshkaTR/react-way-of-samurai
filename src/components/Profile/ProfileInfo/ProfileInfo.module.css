@@ -1,3 +1,10 @@
 ._description {
     padding: 10px;
 }
+.input_block {
+    margin-top: 20px;
+    display: block;
+}
+.user_photo {
+    width: 200px;
+}
